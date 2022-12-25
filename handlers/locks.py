@@ -1,11 +1,13 @@
-from pyrogram.types import Message
-from database import *
+from utlis.rank import setrank,isrank,remrank,remsudos,setsudo
+from utlis.send import send_msg, Name,Glang
+from utlis.tg import Bot
+import importlib
 
 
 ########################################################################################################################
 ########################################################################################################################
-from plugins.welcome_bye_laws import lock_lockwelcome_test, lock_lockbye_test
-
+import threading, requests, time, random, re,json
+from config import *
 
 async def lock_chat_open(m: Message):
     del_db_locktext(m.chat.id)
